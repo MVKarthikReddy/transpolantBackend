@@ -31,6 +31,8 @@ app.post('/',async (req,res) => {
    
    
       let ads = [];
+
+      // For sponsered ads
        
       $(".sh-np__click-target").each((i,el) => {
        ads.push({
@@ -53,6 +55,8 @@ app.post('/',async (req,res) => {
       }
    
       let shopping_results = [];
+
+      // For shopping results
    
       $(".sh-dgr__gr-auto").each((i,el) => {
           shopping_results.push({
@@ -77,8 +81,6 @@ app.post('/',async (req,res) => {
           Object.keys(shopping_results[i]).forEach(key => shopping_results[i][key] === "" ? delete shopping_results[i][key] : {});  
        }
         
-       console.log(ads[0])
-       console.log(shopping_results[0])
        res.status(200).send(
         {
           results:[
